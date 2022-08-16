@@ -126,28 +126,16 @@
                     }
                 }
 
-                console.log('preNum', preNum);
-
-                //problem with prenum
-
                 //update screen
                 screen.innerHTML = screen.innerHTML + element;
-                
-                //handle what happens after '='
-                if (curSign === '=' && total !== 0) {
-                    screen.innerHTML = ''
-                    total = 0;
-                }
 
                 //to catch the first number
-                if (curSign === null) {
+                if (curSign === null || curSign === '=') {
                     if (total === 0) {
                         total += curNum;
                         preNum = curNum
                     } 
                 }
-
-                
             }
 
             const math_it_up = {
@@ -158,11 +146,10 @@
             }
 
             const calculate = () => {
-                console.log('total', total);
-                console.log('curNum', curNum);
                 let result = math_it_up[curSign](total, curNum)
-                curSign = null
+                curSign = '='
                 total = result;
+                preNum = result;
                 screen.innerHTML = result;
             }
 
