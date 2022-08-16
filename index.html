@@ -2,10 +2,26 @@
 <html lang="en">
     <meta charset="utf-8">
     <style>
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            align-items: center;
+            background: #A7A7A7;
+            margin: 0;
+        }
+
+        .wrapper {
+
+        }
+
         .calculator {
             width: 300px;
-            padding: 10px;
+            padding: 40px 20px;
             border: 1px solid silver;
+            border-radius: 6px;
+            background: #E3E3E3  ;
         }
         .row {
             display: flex;
@@ -22,13 +38,44 @@
             padding: 5px;
             box-sizing: border-box;
             cursor: pointer;
+            border: 1px solid silver;
         }
 
         .display {
-            min-height: 60px;
+            min-height: 80px;
             border: 1px solid silver;
-            margin-bottom: 5px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 6px;
+            background: #fff;
         }
+
+        .number {
+            background: #A6D5FA;
+        }
+
+        .operator {
+            background: #2F3030 ;
+            color: #fff;     
+        }
+
+        .refresh {
+            background: #FA300C ;
+            color: #fff;
+        }
+
+        .green {
+            background: #01CD98;
+        }
+
+        .yellow {
+            background: #F8ED0D;
+        }
+
+        .purple {
+            background: #D59DFF  ;
+        }
+
     </style>
     <body>
         <div class="container">
@@ -37,49 +84,49 @@
                     <div class="display"></div>
                     <div class="buttons">
                         <div class="row">
-                           <button>Rad</button> 
-                           <button>Deg</button> 
-                           <button>x!</button>
-                           <button>(</button> 
-                           <button>)</button>  
-                           <button>%</button>
-                           <button>AC</button>  
+                           <button class="purple">Rad</button> 
+                           <button class="purple">Deg</button> 
+                           <button class="purple">x!</button>
+                           <button class="purple">(</button> 
+                           <button class="purple">)</button>  
+                           <button class="purple">%</button>
+                           <button class="refresh">AC</button>  
                         </div>
                         <div class="row">
-                            <button>Inv</button> 
-                            <button>sin</button> 
-                            <button>ln</button>
-                            <button onclick="updateScreen(7)">7</button> 
-                            <button onclick="updateScreen(8)">8</button>  
-                            <button onclick="updateScreen(9)">9</button>
-                            <button onclick="updateScreen('+')">+</button>  
+                            <button class="yellow">Inv</button> 
+                            <button class="yellow">sin</button> 
+                            <button class="yellow">ln</button>
+                            <button onclick="updateScreen(7)" class="number">7</button> 
+                            <button onclick="updateScreen(8)" class="number">8</button>  
+                            <button onclick="updateScreen(9)" class="number">9</button>
+                            <button onclick="updateScreen('+')" class="operator">+</button>  
                         </div>
                         <div class="row">
-                            <button>pi</button> 
-                            <button>cos</button> 
-                            <button>log</button>
-                            <button onclick="updateScreen(4)">4</button> 
-                            <button onclick="updateScreen(5)">5</button>  
-                            <button onclick="updateScreen(6)">6</button>
-                            <button onclick="updateScreen('x')">x</button>  
+                            <button class="yellow">pi</button> 
+                            <button class="yellow">cos</button> 
+                            <button class="yellow">log</button>
+                            <button onclick="updateScreen(4)" class="number">4</button> 
+                            <button onclick="updateScreen(5)" class="number">5</button>  
+                            <button onclick="updateScreen(6)" class="number">6</button>
+                            <button onclick="updateScreen('x')" class="operator">x</button>  
                         </div>
                         <div class="row">
-                            <button>e</button> 
-                            <button>tan</button> 
-                            <button>can</button>
-                            <button onclick="updateScreen(1)">1</button> 
-                            <button onclick="updateScreen(2)">2</button>  
-                            <button onclick="updateScreen(3)">3</button>
-                            <button onclick="updateScreen('-')">-</button>  
+                            <button class="yellow">e</button> 
+                            <button class="yellow">tan</button> 
+                            <button class="yellow">can</button>
+                            <button onclick="updateScreen(1)" class="number">1</button> 
+                            <button onclick="updateScreen(2)" class="number">2</button>  
+                            <button onclick="updateScreen(3)" class="number">3</button>
+                            <button onclick="updateScreen('-')" class="operator">-</button>  
                         </div>
                         <div class="row">
-                            <button>Ans</button> 
-                            <button>EXP</button> 
-                            <button>x^y</button>
-                            <button onclick="updateScreen(0)">0</button> 
-                            <button onclick="updateScreen('.')">.</button>  
-                            <button onclick="calculate()">=</button>
-                            <button onclick="updateScreen('/')">/</button>  
+                            <button class="green">Ans</button> 
+                            <button class="green">EXP</button> 
+                            <button class="green">x^y</button>
+                            <button onclick="updateScreen(0)" class="number">0</button> 
+                            <button onclick="updateScreen('.')" class="operator">.</button>  
+                            <button onclick="calculate()" class="operator">=</button>
+                            <button onclick="updateScreen('/')" class="operator">/</button>  
                         </div>
                     </div>
                 </div>
